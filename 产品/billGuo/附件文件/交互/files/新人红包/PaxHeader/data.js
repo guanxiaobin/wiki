@@ -1,0 +1,7 @@
+87 path=StudyBird.wiki2/产品/billGuo/附件文件/ 交互/files/新人红包/data.js
+30 mtime=1530876025.038922912
+30 ctime=1530876025.038974945
+30 atime=1530876116.590386267
+23 SCHILY.dev=16777220
+25 SCHILY.ino=8607175557
+18 SCHILY.nlink=1

@@ -1,0 +1,7 @@
+87 path=StudyBird.wiki2/产品/billGuo/附件文件/ 交互/files/游戏结束/data.js
+30 mtime=1530876025.041819091
+30 ctime=1530876025.041875549
+29 atime=1530876051.40514962
+23 SCHILY.dev=16777220
+25 SCHILY.ino=8607175566
+18 SCHILY.nlink=1

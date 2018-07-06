@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>课程砍价</title>
+
+    <meta charset="UTF-8"/>
+
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+
+    <meta name="HandheldFriendly" content="true"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <link href="../asset/fit/basic_markdown.css" type="text/css" rel="stylesheet"/>
+    <link href="../asset/fit/style.css" type="text/css" rel="stylesheet"/>
+    <link href="../asset/fit/sidebar/auto_sidebar.css" type="text/css" rel="stylesheet"/>
+
+    <style type="text/css">
+        body {margin-left: 270px}
+        .index {width: 270px}
+
+        
+            span.md_line{margin-bottom:0.5em; display:block; line-height:1.89}
+            .md_line br{ display: none;}
+            
+    </style>
+
+    <script>
+        var flowchat_options = {
+            'x': 0, 'y': 0, 'line-width': 1, 'line-length': 50, 'text-margin': 10, 'font-size': 13,
+            'font-color': '#3c3c3c', 'line-color': '#666666', 'element-color': '#666666', 'fill': 'transparent',
+            'yes-text': 'yes', 'no-text': 'no', 'arrow-end': 'block', 'class': 'flowchart', 'scale': 1,
+            'symbols': { 'start': {}, 'end': {}, 'condition': {}, 'inputoutput': {}, 'operation': {}, 'subroutine': {}}
+        }
+    </script>
+    <script type="text/javascript" src="../asset/other/raphael-min.js"></script>
+    <script type="text/javascript" src="../asset/other/flowchart.js"></script>
+    <script type="text/javascript" src="../asset/other/echarts.min.js"></script>
+
+    <link href="../asset/other/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../asset/other/mermaid/mermaid.min.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+
+
+<div class="sidebar">
+    <div class="sidebar_body">
+        <div class="index">
+            <ul class="index_body">
+                <li class="title">
+                    <a href="../index.html">document</a>
+                </li>
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../更新记录.html" ><b>1</b> 更新记录</a>
+        
+            
+                        
+                    
+        
+    </li>
+
+
+                
+                    
+                    
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="#" ><b>2</b> 小程序</a>
+        
+            
+                        
+                            <ul class="articles">
+                                
+                                    
+                                        
+    
+    <li class="item">
+        
+        
+        <a class="link_in_site" href="../小程序/iOS支付优化.html" ><b>2.1</b> iOS支付优化</a>
+        
+    </li>
+
+                                    
+                                
+                                    
+                                        
+    
+    <li class="item active">
+        
+        
+        <a class="link_in_site" href="../小程序/课程砍价.html" ><b>2.2</b> 课程砍价</a>
+        
+    </li>
+
+                                    
+                                
+                            </ul>
+                        
+                    
+        
+    </li>
+
+
+                
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="content">
+    <div class="content_body">
+        <h2 class="post_title">
+            课程砍价
+        </h2>
+        <div class="post_body">
+            <div class="markdown">
+                <div class="toc_container">
+<div class="toc"><ul>
+<li>
+<a href="#toc_0">1. 需求背景</a>
+</li>
+<li>
+<a href="#toc_1">2. 发起砍价</a>
+<ul>
+<li>
+<a href="#toc_2">2.1 流程图</a>
+</li>
+<li>
+<a href="#toc_3">2.2 可砍价课程展示</a>
+</li>
+<li>
+<a href="#toc_4">2.3 砍价详情页</a>
+</li>
+<li>
+<a href="#toc_5">2.4 小程序通知</a>
+</li>
+<li>
+<a href="#toc_6">2.5 优惠购买</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_7">3. 帮好友砍价</a>
+</li>
+<li>
+<a href="#toc_8">3.1 流程图</a>
+</li>
+<li>
+<a href="#toc_9">3.2 交互</a>
+</li>
+<li>
+<a href="#toc_10">4. 后台配置</a>
+</li>
+</ul>
+</div>
+</div><h2 id="toc_0" class="h16 md_first_h">1. 需求背景</h2>
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end">该需求的主要目的是，利用用户的关系链实现裂变，提高新增。</span>
+</p>
+
+<h2 id="toc_1" class="h16">2. 发起砍价</h2><h3 id="toc_2" class="h16">2.1 流程图</h3>
+    <div id="ZptMTrPtUaqK3S7e2sDnqYZ" class="flow-graphic"> </div>
+    <script>
+    var diagram = flowchart.parse('st=>start:  进入课程详情页\nbargaining=>operation:  点击进入砍价详情页\nbegin=>operation:  发起砍价\nnotiy=>operation:   小程序通知或自助查询进度\npay=>end:   点击支付\n\nst->bargaining->begin->notiy->pay\n');
+    diagram.drawSVG('ZptMTrPtUaqK3S7e2sDnqYZ');
+    </script> 
+    
+<!--block_code_end--><blockquote class="blockquote_lines_3">
+<p class="md_block">
+    <span class="md_line md_line_start"><code>注意</code>：<br /></span>
+    <span class="md_line"> 1. 从后台切换到前台时，相关页面需自动刷新，获取砍价相关的最新数据。<br /></span>
+    <span class="md_line md_line_end"> 2. 每个课程，用户6天内只能发起一次砍价。砍价结束后，5天后还未付款，第6日凌晨砍价信息清空。</span>
+</p>
+
+</blockquote>
+<h3 id="toc_3" class="h16">2.2 可砍价课程展示</h3>
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start"><img onerror="this.src='../../小程序/_image/2018-05-19/2018-05-19-16-43-54.png?w=800';this.onerror=null;"  class="md_compiled " src="/小程序/_image/2018-05-19/2018-05-19-16-43-54.png?w=800" alt="" title="" style="max-width:800px;"><br /></span>
+    <span class="md_line img_before only_img_before md_line_end">若某课程可砍价，则在以下两个地方展示出来。若不可砍价的课程，则原样展示。</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>课程列表页中，在该课程的Item下展示出可砍价的最低价格；
+</span></li>
+<li class="md_li"><span>课程详情页中，在底部用横幅展示出相关信息。
+</span></li>
+</ul>
+
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_start md_line_end"><strong>横幅文案</strong></span>
+</p>
+
+<table>
+ <thead><tr><th style="text-align:left">状态</th>
+<th style="text-align:left">横幅文案</th>
+<th style="text-align:left">备注</th>
+ </tr>
+</thead>
+ <tbody><tr><td style="text-align:left">未开始砍价 </td>
+<td style="text-align:left">  想要 {n} 元购买该课程？邀请好友帮你砍个价吧！ </td>
+<td style="text-align:left"> n ：为该课程的最低价</td>
+</tr>
+<tr><td style="text-align:left">砍价中 </td>
+<td style="text-align:left"> 已有 {n} 个好友帮你砍价，邀请更多好友来砍价吧～ </td>
+<td style="text-align:left"> n ：为已砍价的好友个数</td>
+</tr>
+<tr><td style="text-align:left">砍价成功 </td>
+<td style="text-align:left"> 砍价成功，恭喜你砍到最低价，剩余支付时间 5 天。(点击查看详情)  </td>
+<td style="text-align:left"> 指的砍到了最低的价格</td>
+</tr>
+<tr><td style="text-align:left">砍价结束 </td>
+<td style="text-align:left"> 砍价结束，恭喜你获得更低价格，剩余支付时间 1 小时。(点击查看详情) </td>
+<td style="text-align:left"> 指的倒计时结束，价格没有到最低</td>
+</tr>
+</tbody> 
+</table>
+<!--block_code_end--><h3 id="toc_4" class="h16">2.3 砍价详情页</h3>
+<p class="md_block">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img onerror="this.src='../../小程序/_image/2018-05-19/2018-05-21-14-36-22.png?w=800';this.onerror=null;"  class="md_compiled " src="/小程序/_image/2018-05-19/2018-05-21-14-36-22.png?w=800" alt="" title="" style="max-width:800px;"></span>
+</p>
+
+
+<p class="md_block">
+    <span class="md_line md_line_start"><strong><code>Banner图</code></strong>:  课程的更面图片<br /></span>
+    <span class="md_line"><strong><code>剩余时间</code></strong>:  每个砍价活动, 只有24小时的时间。 倒计结束显示：“倒计时结束”<br /></span>
+    <span class="md_line"><strong><code>砍价好友</code></strong>:  当前参与了该砍价的好友个数。<br /></span>
+    <span class="md_line"><strong><code>总共砍价</code></strong>：当前砍价的总额<br /></span>
+    <span class="md_line"><strong><code>好友列表</code></strong>：参与的好友列表。列表固定高度，但是列表可以滚动。列表从上到下的排序根据时间，最新的在上面。若没有数据的时候，显示右边的文案：“暂无好友帮你砍价，赶紧去邀请好友吧～”<br /></span>
+    <span class="md_line"><strong><code>价格信息</code></strong>：显示原价和当前的价格。 <br /></span>
+    <span class="md_line md_line_end"><strong><code>邀请好友来砍价按钮</code></strong>：该按钮的文案和处理逻辑如下：</span>
+</p>
+
+<table>
+ <thead><tr><th style="text-align:left">状态</th>
+<th style="text-align:left">文案</th>
+<th style="text-align:left">点击处理</th>
+ </tr>
+</thead>
+ <tbody><tr><td style="text-align:left">砍价中 </td>
+<td style="text-align:left"> 邀请好友来砍价 </td>
+<td style="text-align:left">  发送该课程砍价的链接</td>
+</tr>
+<tr><td style="text-align:left">砍价成功和砍价结束 </td>
+<td style="text-align:left"> 立即去购买 </td>
+<td style="text-align:left">  点击返回课程的详情页</td>
+</tr>
+</tbody> 
+</table>
+<!--block_code_end-->
+<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_start md_line_end"><strong><code>发送砍价的小程序卡片</code></strong>： </span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>标题：我想要抢购《xxx》
+</span></li>
+<li class="md_li"><span>图片内容：（请你帮我砍个价吧）
+</span></li>
+</ul>
+
+<p class="md_block  md_has_block_below md_has_block_below_blockquote">
+    <span class="md_line md_line_start md_line_end"><strong><code>点击发送</code></strong>： 点击后，打开小程序客服页面。当用户发送数字1，客服回复一个公众号的二维码图片。</span>
+</p>
+
+<blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end"> 因为微信政策原因，不能明显出现引导关注公众号的文案，所以这部分的显示使用云控开关配置。</span>
+</p>
+
+</blockquote>
+
+<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_ol">
+    <span class="md_line md_line_start md_line_end"><strong><code>发起砍价规则</code></strong>：</span>
+</p>
+
+
+<ol>
+<li class="md_li"><span> 每邀请一位好友帮你砍价，可随机减掉一个价格
+</span></li>
+<li class="md_li"><span>每个课程只能发起一次砍价
+</span></li>
+</ol>
+<h3 id="toc_5" class="h16">2.4 小程序通知</h3>
+<p class="md_block  md_has_block_below md_has_block_below_ul">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start"><img onerror="this.src='../../小程序/_image/2018-05-19/2018-05-19-18-40-48.png?w=800';this.onerror=null;"  class="md_compiled " src="/小程序/_image/2018-05-19/2018-05-19-18-40-48.png?w=800" alt="" title="" style="max-width:800px;"><br /></span>
+    <span class="md_line img_before only_img_before">利用小程序的模版消息，做砍价进度的通知。<br /></span>
+    <span class="md_line md_line_end">这里有两个模版消息，分别为：“砍价进度通知” 和 “砍价成功通知”。</span>
+</p>
+
+
+<ul>
+<li class="md_li"><span>砍价进度通知：当距离结束还有4小时的时候，并且还可以发送通知（微信限制了发送次数）。
+</span></li>
+<li class="md_li"><span>砍价成功通知：当用户的在规定的时间内，砍价成功后，并且还可以发送通知（微信限制了发送次数）。
+</span></li>
+</ul>
+<h3 id="toc_6" class="h16">2.5 优惠购买</h3>
+<ol>
+<li class="md_li"><span>若用户未发起砍价，则按已有逻辑，可以选择优惠券购买
+</span></li>
+<li class="md_li"><span>若用户发起过砍价，则按砍价后的价格购买，不再使用优惠券
+</span></li>
+</ol>
+<h2 id="toc_7" class="h16">3. 帮好友砍价</h2><h2 id="toc_8" class="h16">3.1 流程图</h2>
+    <div id="ZZvNPmegveknYEwBV3uU5Gc" class="flow-graphic"> </div>
+    <script>
+    var diagram = flowchart.parse('st=>start:  进入砍价页\ncheck1=>condition:  当前活动是有效?\ncheck2=>condition:  是否已经登录？\ncheck3=>condition:  是否可砍价？\nupdate1=>operation:  显示出“砍价结束”的信息\nupdate2=>operation:  显示不可砍价的原因\nclick=>operation:  点击砍价\nlogin=>operation:  授权登录\nend=>end:  点击砍价\n\nst->check1(no)->update1\ncheck1(yes)->check2(no)->click->login->check3\ncheck2(yes)->check3(no)->update2\ncheck3(yes)->end\n');
+    diagram.drawSVG('ZZvNPmegveknYEwBV3uU5Gc');
+    </script> 
+    
+<!--block_code_end-->
+<ul>
+<li class="md_li"><span>当前活动是否有效： 判断倒计时是否停止，判断是否已经砍价到最低。
+</span></li>
+<li class="md_li"><span>是否可砍价： 判断是否已经砍过； 判断今日是否已达砍价最高次数（每日最高砍价5次）。
+</span></li>
+</ul>
+<h2 id="toc_9" class="h16">3.2 交互</h2>
+<p class="md_block  md_has_block_below md_has_block_below_ol">
+    <span class="md_line md_line_dom_embed md_line_with_image md_line_start"><img onerror="this.src='../../小程序/_image/2018-05-19/2018-05-19-18-55-40.png?w=850';this.onerror=null;"  class="md_compiled " src="/小程序/_image/2018-05-19/2018-05-19-18-55-40.png?w=850" alt="" title="" style="max-width:850px;"><br /></span>
+    <span class="md_line img_before only_img_before"><strong><code>砍价好友列表</code></strong>：列表数据从上到下，规则按时间排序，最近在最上面。 这个列表不用滚动，平铺下来。<br /></span>
+    <span class="md_line md_line_end"><strong><code>砍价金额</code></strong>：</span>
+</p>
+
+
+<ol>
+<li class="md_li"><span>砍价只能往下砍，暂不做往上加
+</span></li>
+<li class="md_li"><span>砍价最低为0.1元（1毛钱）
+</span></li>
+<li class="md_li"><span>可砍到的最低价 和 需要的人数，全可由后台配置
+</span></li>
+</ol>
+
+<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_ol">
+    <span class="md_line md_line_start md_line_end"><strong><code>砍价规则</code></strong>：</span>
+</p>
+
+
+<ol>
+<li class="md_li"><span> 每天最多能帮5位好友砍价
+</span></li>
+<li class="md_li"><span>同一好友的同一课程只能砍价1次
+</span></li>
+<li class="md_li"><span>我们将根据实际情况对活动规则进行调整，相关调整一经发布即时生效。
+</span></li>
+</ol>
+
+<p class="md_block  md_has_block_below md_has_block_below_blockquote">
+    <span class="md_line md_line_start md_line_end"><strong><code>引导关注公众号</code></strong>：利用客服消息，回复公众号的二维码图片。</span>
+</p>
+
+<blockquote class="blockquote_lines_1">
+<p class="md_block">
+    <span class="md_line md_line_start md_line_end"> 因为微信政策原因，不能明显出现引导关注公众号的文案，所以这部分的显示使用云控开关配置。</span>
+</p>
+
+</blockquote>
+<h2 id="toc_10" class="h16">4. 后台配置</h2>
+<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_ol">
+    <span class="md_line md_line_start md_line_end">在课程的详情中，添加一下可配置项：</span>
+</p>
+
+
+<ol>
+<li class="md_li"><span>是否支持砍价（选项为“是” 或 “否”， 默认为“否”）
+</span></li>
+<li class="md_li"><span>可砍价最低金额 （手动输入数字，单位为元）
+</span></li>
+<li class="md_li"><span>砍到最低金额需要的人数（手动输入数字，必须为整型）
+</span></li>
+</ol>
+            </div>
+        </div>
+        
+
+    </div>
+
+</div>
+
+
+
+
+
+<div class="sidebar_clicker click_to_close_sidebar">
+    <span class="bar"></span>
+</div>
+
+
+
+
+<script type="text/javascript" src="../asset/fit/jquery.js"></script>
+<script type="text/javascript" src="../asset/fit/sidebar/auto_sidebar.js"></script>
+
+
+
+
+
+<script>
+    run_sidebar("left", 'sidebar', 270, "show");
+
+    $(document).ready(function(){
+        var sidebar = $('.index_body'); var current = $('.index_body .active');
+        if (sidebar.length && current.length){ sidebar.scrollTop(current.offset().top - sidebar.height()/2 + 100);}
+    })
+</script>
+
+
+
+</body>
+
+</html>

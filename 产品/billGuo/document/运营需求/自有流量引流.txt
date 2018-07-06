@@ -1,0 +1,51 @@
+[Toc]
+## 1. 需求背景
+微信现在开发了外部APP打开小程序的功能。这对小程序的引流是非常有好处的，我们可以把自己的APP引流到小程序中。 
+自有APP列表：
+1. 手机刷机精灵（Android）
+2. Root精灵（Android）
+3. 活点地图（Android、iOS）
+
+>  点击链接查看微信的官方文档：[链接](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=21526646385rK1Bs&token=5d0460853e4058cda3c86f93ad697853eed084be&lang=zh_CN)
+
+## 2.  WBS分解
+![](./_image/2018-05-26/2018-05-26-13-17-59.png)
+## 3. 总流程
+```flow
+st: 广告展示
+enter: 用户点击/扫码进入小程序落地页
+send: 回复XXX给客服
+reply: 后台回复公众号二维码，提醒观众公众号，发送"刷机"获取课程
+end: 用户扫码关注公众号
+st > enter > send > reply > end
+```
+
+## 4. 入口展示
+` **刷机精灵**`：(优先级从高到低)
+- 开屏广告（点击进入小程序的落地页）
+- 工具箱 (点击进入小程序首页)
+- 应用管理的顶部Banner位（点击进入小程序的落地页）
+
+` **ROOT精灵**`：
+- 【Root后能干啥】的页面（点击，跳到小程序首页）
+-  开屏广告？？？
+
+
+### 4.1 开屏广告
+![](./_image/2018-05-29-17-52-48.png?w=800)
+
+发送 9009 到客服，客服直接回复文章地址( http://mp.weixin.qq.com/s?__biz=MzAwMTkyMzY4MA==&mid=100000139&idx=1&sn=301d87b187d0eb364c1350489c624729&chksm=1ad30e842da487927b3de131aa5cee7bc267fc010133d1b1908aecb9733a03f198beaded2689#rd )
+
+## 5.  其他渠道
+
+```table
+| 渠道 | 入口位置 | banner尺寸 |
+| ROM之家 | 主页Banner | 601 * 312 px |
+| 刷机PC端ROM市场 |  首页Banner | 300 * 170 px |
+| 刷机精灵官网 | 主页Banner | 1920 * 524 px |
+| 刷机精灵微信公众号 | 公众号菜单点击发公众号二维码 |  — |
+```
+
+**Banner 图:**
+![](./_image/2018-05-28-22-20-52.png)
+

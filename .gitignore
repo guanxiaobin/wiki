@@ -1,23 +1,40 @@
-# Windows thumbnail cache files
-Thumbs.db
-ehthumbs.db
-ehthumbs_vista.db
+# MarkEditor
+.Archive/
+.sync/
+.sort
+.*_configs.data
+.markeditor_ignore
+sync_changes.log
 
-# Folder config file
-Desktop.ini
+# MS Office temp file
+~$*
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+### macOS ###
+*.DS_Store
+.AppleDouble
+.LSOverride
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+# Icon must end with two \r
+Icon
 
-# Windows shortcuts
-*.lnk
+# Thumbnails
+._*
 
-# =========================
-# Operating System Files
-# =========================
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+产品/Young/备用资料/专利/一种用户发送表情改变用户状态的交互方法 专利配图.vsdx
+产品/Young/备用资料/专利/一种用户发送表情改变用户状态的交互方法.doc
+产品/Young/16 我要守护.md
